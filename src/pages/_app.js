@@ -1,5 +1,8 @@
 import React from 'react';
 
+import NProgress from 'nprogress';
+import Router from 'next/router';
+
 import firebase from 'firebase';
 import App, { Container } from 'next/app';
 import { ApolloProvider } from 'react-apollo';
@@ -24,6 +27,10 @@ if (typeof window !== 'undefined') {
         storageBucket: 'reactpress-48581.appspot.com',
         messagingSenderId: process.env.FIREBASE_MESSAGING
     });
+
+Router.onRouteChangeStart = () => NProgress.start();
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
 
 class InitApp extends App {
     static async getInitialProps({ Component, ctx }) {
