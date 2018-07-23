@@ -116,6 +116,14 @@ export class Body extends React.Component {
         }
     };
 
+    render_error = () => {
+        return (
+            <div className="center">
+                <h5>There was an error when trying to fetch posts</h5>
+            </div>
+        );
+    };
+
     render() {
         let variables = { first: this.state.postPerPage };
 
@@ -123,19 +131,20 @@ export class Body extends React.Component {
             <Query query={query} variables={variables}>
                 {(props) => {
                     // if there's an error
-                    if (props.error) return <Error render={<p>Error fetching posts</p>} />;
-                    
+                    if (props.error) return <Error render={this.render_error()} />;
+
                     const posts = props.data.allPost;
 
                     return posts ? (
                         <div className="home-body section container">
                             <div className="row">{this.render_post_cards(posts.edges)}</div>
-                            {posts.edges.length ?
-                                this.render_pagination(
+                            {posts.edges.length
+                                ? this.render_pagination(
                                     props.data.allPost.pageInfo,
                                     props.data.allPost.totalCount,
                                     props.fetchMore
-                                ) : null }
+                                )
+                                : null}
                         </div>
                     ) : null;
                 }}
