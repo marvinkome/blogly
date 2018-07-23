@@ -26,7 +26,11 @@ export default class PageView extends React.Component {
                         <div className="col s12">
                             <div>
                                 <AuthorInfo data={this.props.user} />
-                                <UserPosts data={this.props.user} />
+                                <UserPosts
+                                    data={this.props.user}
+                                    hasMore={this.props.hasMore}
+                                    fetchMore={this.props.fetchMore}
+                                />
                             </div>
                         </div>
                     </div>
@@ -37,5 +41,7 @@ export default class PageView extends React.Component {
 }
 
 PageView.propTypes = {
-    user: types.object
+    user: types.object,
+    hasMore: types.bool,
+    fetchMore: types.func
 };

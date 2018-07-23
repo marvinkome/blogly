@@ -1,14 +1,14 @@
 import gql from 'graphql-tag';
 
 export default gql`
-    query PublicProfile($user_name: String) {
+    query PublicProfile($user_name: String, $first: Int, $after: String) {
         publicUser(name: $user_name) {
             id
             fullName
             description
             memberSince
             gravatarUrl
-            posts(first: 5) {
+            posts(first: $first, after: $after) {
                 edges {
                     node {
                         id
@@ -17,6 +17,10 @@ export default gql`
                         body
                         postPicUrl
                     }
+                }
+                pageInfo {
+                    endCursor
+                    hasNextPage
                 }
             }
         }

@@ -7,7 +7,7 @@ import Error from '../../../components/error';
 import PageView from '../../../components/editorComponent';
 
 import redirect from '../../../lib/redirect';
-import { checkLoggedIn } from '../../../lib/helpers';
+import { checkLoggedIn, decodeUri } from '../../../lib/helpers';
 
 import query from './query';
 
@@ -37,7 +37,7 @@ EditPost.getInitialProps = async (ctx) => {
         return {};
     }
 
-    const post_name = decodeURIComponent(ctx.query.id);
+    const post_name = decodeUri(ctx.query.id);
     return { post_name };
 };
 

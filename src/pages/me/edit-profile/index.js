@@ -50,8 +50,8 @@ const EditProfile = ({ loggedIn, client }) => {
                         return (
                             <Mutation
                                 mutation={updateProfile}
-                                onCompleted={onCompleted}
-                                onError={onError}
+                                onCompleted={() => onCompleted(false)}
+                                onError={() => onError(false)}
                             >
                                 {(update_profile) => {
                                     return (

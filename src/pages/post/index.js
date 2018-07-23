@@ -3,6 +3,7 @@ import types from 'prop-types';
 import Router from 'next/router';
 import { Query } from 'react-apollo';
 
+import { decodeUri } from '../../lib/helpers';
 import MainPage from '../../components/app';
 import Error from '../../components/error';
 
@@ -51,7 +52,7 @@ export const Post = ({ loggedIn, post_name }) => {
 
 Post.getInitialProps = async ({ query }) => {
     return {
-        post_name: decodeURIComponent(query.id)
+        post_name: decodeUri(query.id)
     };
 };
 

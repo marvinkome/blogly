@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Query, Mutation, withApollo } from 'react-apollo';
 
 import Error from '../../../../components/error';
-import { createToast } from '../../../../lib/helpers';
+import { createToast, sort_posts } from '../../../../lib/helpers';
 
 import query, { deleteMutation } from './query';
 import { Post } from './post';
@@ -93,7 +93,7 @@ const PageView = ({ client }) => {
             {({ data, error, fetchMore }) => {
                 if (error) return <Error render={<p>There was an error fetching post</p>} />;
 
-                const edges = data.user ? data.user.posts.edges : [];
+                const edges = data.user ? sort_posts(data.user.posts.edges) : [];
                 const hasMore = data.user ? data.user.posts.pageInfo.hasNextPage : false;
                 const endCursor = data.user ? data.user.posts.pageInfo.endCursor : '';
 

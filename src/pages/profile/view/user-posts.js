@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import types from 'prop-types';
 import Link from 'next/link';
 import Error from '../../../components/error';
-import { truncate, strip_html, format_date, get_page_link } from '../../../lib/helpers';
+import { truncate, strip_html, format_date, get_page_link, sort_posts } from '../../../lib/helpers';
 
 class UserPosts extends Component {
     renderPosts = (obj) => {
@@ -44,15 +44,29 @@ class UserPosts extends Component {
             </div>
         );
     };
+    renderPagination = () => {
+        return (
+            <div className="col s12 center pagination">
+                <a className="btn btn-large" onClick={this.props.fetchMore}>
+                    Show more
+                </a>
+            </div>
+        );
+    };
     render() {
-        const posts = this.props.data.posts.edges;
+        const posts = sort_posts(this.props.data.posts.edges);
         return (
             <div className="section user-posts">
                 <div className="row">
                     <div className="col s12 m12">
                         <h5>Latest Posts by {this.props.data.fullName}</h5>
 
-                        {!posts.length ? (
+                        {posts.length ? (
+                            <div>
+                                {posts.map((obj) => this.renderPosts(obj))}
+                                {this.props.hasMore && this.renderPagination()}
+                            </div>
+                        ) : (
                             <Error
                                 render={
                                     <div>
@@ -62,8 +76,6 @@ class UserPosts extends Component {
                                     </div>
                                 }
                             />
-                        ) : (
-                            posts.map((obj) => this.renderPosts(obj))
                         )}
                     </div>
                 </div>
@@ -73,7 +85,9 @@ class UserPosts extends Component {
 }
 
 UserPosts.propTypes = {
-    data: types.object.isRequired
+    data: types.object.isRequired,
+    hasMore: types.bool.isRequired,
+    fetchMore: types.func.isRequired
 };
 
 export default UserPosts;

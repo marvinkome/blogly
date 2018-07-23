@@ -22,6 +22,10 @@
                     max-width: 17% !important;
                 }
 
+                @media screen and (max-width: 350px) {
+                    max-width: 24% !important;
+                }
+
                 img {
                     background-color: #e6e6e6;
                 }
@@ -47,7 +51,7 @@
                     }
 
                     @media screen and (max-width: 600px) {
-                        margin-top: -3px;
+                        margin-top: -3px !important;
                     }
                 }
 
@@ -163,11 +167,11 @@
                         white-space: initial;
 
                         span[style='font-family: monospace; overflow-wrap: break-word;'] {
-                        color: inherit;
-                    }
-                    span[style='font-family: monospace; word-wrap: break-word;'] {
-                        color: inherit;
-                    }
+                            color: inherit;
+                        }
+                        span[style='font-family: monospace; word-wrap: break-word;'] {
+                            color: inherit;
+                        }
                     }
                     blockquote {
                         border-left: 5px solid @black-scheme-1;
@@ -336,7 +340,7 @@
             box-shadow: 0px -1px 1px 3px @color-scheme-2;
 
             div {
-                width: 12%;
+                width: 14%;
                 text-align: center;
 
                 &.active {

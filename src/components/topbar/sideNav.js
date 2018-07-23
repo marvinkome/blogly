@@ -32,23 +32,21 @@ export class SideNav extends React.Component {
                                 src={this.props.data.image}
                             />
                         </a>
-                        <span className="email">
-                            Hello, {this.props.data.username}
-                        </span>
+                        <span className="email">Hello, {this.props.data.username}</span>
                     </div>
                 </li>
 
                 {this.props.data.isLoggedIn ? (
                     <React.Fragment>
                         <li>
-                            <Link href="/admin/new-post">
+                            <Link href="/me/new-post">
                                 <a>
                                     <span>New Post</span>
                                 </a>
                             </Link>
                         </li>
                         <li>
-                            <Link href="/admin/posts">
+                            <Link href="/me/posts">
                                 <a>
                                     <span>All Posts</span>
                                 </a>
@@ -56,9 +54,9 @@ export class SideNav extends React.Component {
                         </li>
                         <div className="divider" />
                         <li>
-                            <Link href="/admin/posts">
+                            <Link href="/me/edit-profile">
                                 <a>
-                                    <span>Dashboard</span>
+                                    <span>Edit Profile</span>
                                 </a>
                             </Link>
                         </li>
