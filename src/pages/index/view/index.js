@@ -118,8 +118,8 @@ export class Body extends React.Component {
 
     render_error = () => {
         return (
-            <div className="center">
-                <h5>There was an error when trying to fetch posts</h5>
+            <div className="col s12">
+                <h5 className="center">There was an error when trying to fetch posts</h5>
             </div>
         );
     };
