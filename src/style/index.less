@@ -1,0 +1,40 @@
+/**
+ * ./src/style/index.css
+ */
+
+@import './variables';
+
+* {
+    outline: none
+}
+
+a {
+    color: @color-scheme-2;
+}
+
+body {
+    background-color: @black-scheme-4;
+}
+
+@media screen and (min-width: 993px) {
+    .preloader-wrapper.small {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .preloader-cont {
+        margin-left: 39%;
+        padding: 3.3% 4% !important;
+    }
+
+    .preloader-cont.app-loader {
+        margin-left: 28%;
+    }
+
+    .preloader-wrapper.small {
+        width: 30px;
+        height: 30px;
+    }
+}
