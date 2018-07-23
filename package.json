@@ -8,7 +8,7 @@
         "start": "NODE_ENV=production yarn start-server $p PORT",
         "dev": "NODE_ENV=development yarn start-server",
         "build": "next build src",
-        "export": "npm run build && next export src",
+        "postinstall": "yarn build",
         "pretty": "prettier-eslint --write 'src/**/*.+(css|less|js|md)'",
         "lint": "eslint --fix 'src/**/*.+(js)'",
         "format": "yarn pretty && yarn lint",
