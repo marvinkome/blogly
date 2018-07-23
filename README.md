@@ -4,7 +4,7 @@ a simple mini blog built with react.
 
 ## Live app
 
-To preview the website go to [Blogly](https://blogly.herokuapp.com)
+To preview the website go to [Blogly](https://blogly.now.sh)
 
 ## Contributions
 
