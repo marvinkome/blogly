@@ -40,16 +40,18 @@ export const PostCard = ({ post }) => {
 
                 <div className="card-stacked">
                     <div className="card-content">
-                        <h1 className="post-card__title">
-                            <Link href={`/p/${page_link}`}>
-                                <a className="post-card__title--link">{post.title}</a>
-                            </Link>
-                        </h1>
+                        <Link href={`/p/${page_link}`}>
+                            <a>
+                                <h1 className="post-card__title">
+                                    <p className="post-card__title--link">{post.title}</p>
+                                </h1>
 
-                        <div
-                            className="post-card__text"
-                            dangerouslySetInnerHTML={createMarkup(strip_html(post.body))}
-                        />
+                                <div
+                                    className="post-card__text"
+                                    dangerouslySetInnerHTML={createMarkup(strip_html(post.body))}
+                                />
+                            </a>
+                        </Link>
                     </div>
 
                     <div className="post-card__meta card-action">
