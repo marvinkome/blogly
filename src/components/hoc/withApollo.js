@@ -8,7 +8,8 @@ import initApollo from '../../lib/init-apollo';
 import { tokenKey } from '../../keys';
 
 function parseCookies(req, options = {}) {
-    return cookie.parse(req ? req.headers.cookie || '' : document.cookie, options);
+    if (req) return cookie.parse(req.headers.cookie, options);
+    if (document) return cookie.parse(document.cookie, options);
 }
 
 export default (App) => {

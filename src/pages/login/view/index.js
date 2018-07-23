@@ -10,9 +10,11 @@ import mutation from './query';
 
 export const PageView = ({ client }) => {
     const onCompleted = (data) => {
-        document.cookie = cookie.serialize(tokenKey, data.loginUser.token, {
-            maxAge: 30 * 24 * 60 * 60 // 30 days
-        });
+        if (document) {
+            document.cookie = cookie.serialize(tokenKey, data.loginUser.token, {
+                maxAge: 30 * 24 * 60 * 60 // 30 days
+            });
+        }
 
         client.resetStore().then(() => redirect({}, '/'));
     };
