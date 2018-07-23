@@ -114,9 +114,13 @@ export const checkLoggedIn = async (client) => {
 };
 
 export const logout = () => {
-    document.cookie = cookie.serialize(tokenKey, '', {
-        maxAge: -1
-    });
+    try {
+        document.cookie = cookie.serialize(tokenKey, '', {
+            maxAge: -1
+        });
+    } catch (e) {
+        return;
+    }
 };
 
 export const createToast = (text) => {
