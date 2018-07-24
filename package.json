@@ -12,6 +12,7 @@
         "pretty": "prettier-eslint --write 'src/**/*.+(css|less|js|md)'",
         "lint": "eslint --fix 'src/**/*.+(js)'",
         "format": "yarn pretty && yarn lint",
+        "gen-changelog": "git log --pretty=format:\"-*%cd* - **%s**\"",
         "test": "jest"
     },
     "jest": {
