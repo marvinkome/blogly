@@ -15,7 +15,11 @@ class UserPosts extends Component {
                 <div className="card-content">
                     {noPostPic && (
                         <div className="card-image">
-                            <img src={obj.node.postPicUrl} className="responsive-img" />
+                            <img
+                                alt={obj.node.title}
+                                src={obj.node.postPicUrl}
+                                className="responsive-img"
+                            />
                         </div>
                     )}
 
@@ -33,7 +37,11 @@ class UserPosts extends Component {
                 <div className="card-action">
                     <div className="author">
                         <div className="author-image">
-                            <img className="circle" src={this.props.data.gravatarUrl || defImg} />
+                            <img
+                                alt={this.props.data.fullName}
+                                className="circle"
+                                src={this.props.data.gravatarUrl || defImg}
+                            />
                         </div>
                         <div className="info">
                             <span className="name">{this.props.data.fullName}</span>

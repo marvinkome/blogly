@@ -15,6 +15,7 @@ class AuthorInfo extends Component {
                             <img
                                 src={this.props.data.gravatarUrl || defImg}
                                 className="responsive-img"
+                                alt={this.props.data.fullName}
                             />
                         </div>
                     </div>

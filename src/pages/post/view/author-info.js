@@ -22,7 +22,7 @@ const AuthorInfo = ({ data }) => {
                     src={img}
                     className="responsive-img circle"
                     style={imgStyle}
-                    title={data.author.fullName}
+                    alt={data.author.fullName}
                 />
             </div>
             <div className="author-details col s9">

@@ -17,7 +17,7 @@ class PostCard extends Component {
                         postPicUrl !== '' &&
                         postPicUrl !== null && (
                         <div className="post-image center">
-                            <img src={postPicUrl} className="responsive-img" />
+                            <img alt={title} src={postPicUrl} className="responsive-img" />
                         </div>
                     )}
                     <div>
@@ -30,9 +30,7 @@ class PostCard extends Component {
                     </div>
                 </div>
 
-                <div className="post-footer">
-                    {tag && `Posted In: ${tag.name}`}
-                </div>
+                <div className="post-footer">{tag && `Posted In: ${tag.name}`}</div>
             </div>
         );
     }

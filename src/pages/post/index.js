@@ -18,7 +18,7 @@ export const Post = ({ loggedIn, post_name }) => {
                 render={
                     <div className="center">
                         <div className="center-align">
-                            <img className="responsive-img" src="/static/404.png" />
+                            <img alt="404 image" className="responsive-img" src="/static/404.png" />
                         </div>
                         <h5 className="center">
                             The content you{'\''}re looking for is currently not available

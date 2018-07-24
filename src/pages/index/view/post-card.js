@@ -57,7 +57,12 @@ export const PostCard = ({ post }) => {
                     <div className="post-card__meta card-action">
                         <div className="post-card__meta__author">
                             <div className="post-card__meta__author-image">
-                                <img className="circle" src={img} style={imgStyle} />
+                                <img
+                                    alt={post.author.fullName}
+                                    className="circle"
+                                    src={img}
+                                    style={imgStyle}
+                                />
                             </div>
                             <div className="post-card__meta__info">
                                 <Link href={profile_link}>

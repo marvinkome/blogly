@@ -17,6 +17,7 @@ const Notifications = ({ notifications }) => {
                     <div className="col s3">
                         <div className="author-image">
                             <img
+                                alt={fromAuthor.fullName}
                                 src={fromAuthor.gravatarUrl || '/static/default-pic.png'}
                                 className="responsive-img circle"
                             />

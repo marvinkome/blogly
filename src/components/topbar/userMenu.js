@@ -55,6 +55,7 @@ export default class UserMenu extends React.Component {
                                     this.props.imageData.imageClass
                                 }
                                 src={this.props.imageData.image}
+                                alt={'User Avatar'}
                             />
                         </a>
                         <UserDropDownMenu handleLogout={this.props.logout} />

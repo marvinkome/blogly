@@ -28,6 +28,7 @@ export class SideNav extends React.Component {
                     <div className="user-view">
                         <a>
                             <img
+                                alt={this.props.data.username}
                                 className={'circle ' + this.props.data.imageClass}
                                 src={this.props.data.image}
                             />

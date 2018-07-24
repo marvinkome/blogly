@@ -175,8 +175,10 @@ export const checkLoggedIn = async (client) => {
 
 export const logout = () => {
     try {
+
         document.cookie = cookie.serialize(tokenKey, '', {
-            maxAge: -1
+            maxAge: -1,
+            path: '/'
         });
     } catch (e) {
         return;

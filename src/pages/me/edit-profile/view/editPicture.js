@@ -43,7 +43,7 @@ export class EditPicture extends React.Component {
             <div className="edit-picture">
                 <div className="preview-cont center">
                     <div className="img-preview">
-                        <img className="responsive-img circle" src={user_image} />
+                        <img alt="User Avatar" className="responsive-img circle" src={user_image} />
                     </div>
                 </div>
 

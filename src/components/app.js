@@ -23,6 +23,9 @@ export default class MainPage extends React.Component {
                         name="description"
                         content={this.props.pageDescription || defaultDescription}
                     />
+                    <link rel="icon" type="image/png" href="/static/favicon.png" />
+                    <meta name="google-site-verification" 
+                        content="ZipE53qvQS_UZTufTWuz_-vIBWP36xvKP7qaX0taxCs" />
                 </Head>
                 <Topbar isLoggedIn={this.props.loggedIn} />
                 {this.props.render()}
