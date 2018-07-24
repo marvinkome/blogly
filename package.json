@@ -62,6 +62,7 @@
         "react-apollo": "^2.1.9",
         "react-custom-scrollbars": "^4.2.1",
         "react-dom": "^16.3.0",
+        "react-ga": "^2.5.3",
         "react-icons": "^2.2.7",
         "react-router-dom": "^4.2.2",
         "sanitize-html": "^1.18.2"
@@ -89,5 +90,11 @@
         "react-test-renderer": "^16.4.0",
         "react-testing-library": "^3.1.4",
         "waait": "^1.0.2"
+    },
+    "resolutions": {
+        "ansi-regex": "^2.0.0",
+        "pretty-format": "20.0.1",
+        "string-width": "2.0.0",
+        "table": "3.7.9"
     }
 }

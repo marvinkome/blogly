@@ -24,8 +24,14 @@ export default class MainPage extends React.Component {
                         content={this.props.pageDescription || defaultDescription}
                     />
                     <link rel="icon" type="image/png" href="/static/favicon.png" />
-                    <meta name="google-site-verification" 
-                        content="ZipE53qvQS_UZTufTWuz_-vIBWP36xvKP7qaX0taxCs" />
+                    <meta
+                        name="google-site-verification"
+                        content="ZipE53qvQS_UZTufTWuz_-vIBWP36xvKP7qaX0taxCs"
+                    />
+                    <meta name="theme-color" content="#39294f" />
+                    {process.env.NODE_ENV === 'production' && (
+                        <script src="https://cdn.polyfill.io/v2/polyfill.min.js" defer async />
+                    )}
                 </Head>
                 <Topbar isLoggedIn={this.props.loggedIn} />
                 {this.props.render()}

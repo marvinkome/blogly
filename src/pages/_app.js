@@ -9,6 +9,7 @@ import { ApolloProvider } from 'react-apollo';
 
 import withApolloClient from '../components/hoc/withApollo';
 
+import { initGA, logPageView } from '../lib/analytics';
 import { checkLoggedIn } from '../lib/helpers';
 
 import 'materialize-css/dist/css/materialize.min.css';
@@ -51,6 +52,16 @@ class InitApp extends App {
         return {
             pageProps
         };
+    }
+
+    componentDidMount() {
+        if (process.env.NODE_ENV === 'production') {
+            if (!window.GA_INITIALIZED) {
+                initGA();
+                window.GA_INITIALIZED = true;
+            }
+            logPageView();
+        }
     }
 
     render() {
